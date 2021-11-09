@@ -1,3 +1,3 @@
-const text = document.querySelector("body .text")
+const={
 
-text.style.color = "red";
+}
