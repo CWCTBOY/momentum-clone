@@ -1,6 +1,6 @@
 const logninForm = document.querySelector(".login");
 const loginInput = document.querySelector(".login_input");
-const display = document.querySelector(".display");
+const sayHello = document.querySelector(".sayhello");
 
 const HIDDEN_CLASS = "hidden";
 
@@ -10,8 +10,8 @@ function loginInputSubmit(event) {
   event.preventDefault();
   console.log(`Hello, ${userName}!`);
   logninForm.classList.add(HIDDEN_CLASS);
-  display.classList.remove(HIDDEN_CLASS);
-  display.innerHTML = `Hello, ${userName}!`
+  sayHello.classList.remove(HIDDEN_CLASS);
+  sayHello.innerHTML = `Hello, ${userName}!`
 };
 
 logninForm.addEventListener("submit", loginInputSubmit);
