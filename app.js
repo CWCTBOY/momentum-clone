@@ -5,15 +5,6 @@ const sayHello = document.querySelector(".sayhello");
 const HIDDEN_CLASS = "hidden";
 const USERNAME_KEY = "username";
 
-function loginSubmit(event) {
-  const userName = loginInput.value;
-  event.preventDefault();
-  localStorage.setItem(USERNAME_KEY, userName);
-  console.log(`Hello, ${userName}!`);
-  logninForm.classList.add(HIDDEN_CLASS);
-  isLocalStorageExist(userName);
-} //main function
-
 const savedUserName = localStorage.getItem(USERNAME_KEY);
 
 if (savedUserName === null)
@@ -24,6 +15,15 @@ if (savedUserName === null)
 {
   isLocalStorageExist(savedUserName);
 }//isLocalStorageExisst-condition
+
+function loginSubmit(event) {
+  const userName = loginInput.value;
+  event.preventDefault();
+  localStorage.setItem(USERNAME_KEY, userName);
+  console.log(`Hello, ${userName}!`);
+  logninForm.classList.add(HIDDEN_CLASS);
+  isLocalStorageExist(userName);
+} //main function
 
 function isLocalStorageExist(username) {
   sayHello.innerHTML = `Hello, ${username}!`;
