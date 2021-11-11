@@ -11,8 +11,7 @@ function loginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, userName);
   console.log(`Hello, ${userName}!`);
   logninForm.classList.add(HIDDEN_CLASS);
-  sayHello.innerHTML = `Hello, ${userName}!`;
-  sayHello.classList.remove(HIDDEN_CLASS);
+  isLocalStorageExist(userName);
 } //main function
 
 const savedUserName = localStorage.getItem(USERNAME_KEY);
