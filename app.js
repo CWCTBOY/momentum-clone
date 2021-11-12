@@ -1,31 +1,28 @@
-const logninForm = document.querySelector(".login");
+const loginForm = document.querySelector(".login");
 const loginInput = document.querySelector(".login_input");
 const sayHello = document.querySelector(".sayhello");
 
-const HIDDEN_CLASS = "hidden";
-const USERNAME_KEY = "username";
+const HIDDEN_CLASSNAME = "hidden";
+const TYPED_USERNAME = "username";
 
-const savedUserName = localStorage.getItem(USERNAME_KEY);
-
-if (savedUserName === null)
+const savedLoginInput = localStorage.getItem(TYPED_USERNAME);
+if (savedLoginInput === null)
 {
-  logninForm.classList.remove(HIDDEN_CLASS);
-  logninForm.addEventListener("submit", loginSubmit);
+  loginForm.addEventListener("submit", submitLoginForm);
 } else
 {
-  isLocalStorageExist(savedUserName);
-}//isLocalStorageExisst-condition
+  isLocalStorageExist();
+}
 
-function loginSubmit(event) {
-  const userName = loginInput.value;
+function submitLoginForm(event) {
   event.preventDefault();
-  localStorage.setItem(USERNAME_KEY, userName);
-  console.log(`Hello, ${userName}!`);
-  logninForm.classList.add(HIDDEN_CLASS);
-  isLocalStorageExist(userName);
-} //main function
+  localStorage.setItem(TYPED_USERNAME, loginInput.value);
+  isLocalStorageExist();
+}//이벤트 함수
 
-function isLocalStorageExist(username) {
-  sayHello.innerHTML = `Hello, ${username}!`;
-  sayHello.classList.remove(HIDDEN_CLASS);
-}//반복문장 축소함수
+function isLocalStorageExist() {
+  const userName = localStorage.getItem(TYPED_USERNAME);
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  sayHello.classList.remove(HIDDEN_CLASSNAME);
+  sayHello.innerHTML = `Hello, ${userName}!`;
+}//반복함수
