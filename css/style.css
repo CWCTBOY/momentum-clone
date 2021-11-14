@@ -1,1 +1,15 @@
 @import "js.css";
+
+body {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background-image: url("https://www.androidguys.com/wp-content/uploads/2015/12/Wave-Wallpapers-1.jpg");
+  color: whitesmoke;
+  margin: 0;
+  background-size: cover;
+}
+
+.clock {
+  margin: 0;
+}
