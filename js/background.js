@@ -12,4 +12,4 @@ function intervalBgi() {
   body.style = `background-image: url(${randomBgi});`;
 };
 
-setInterval(intervalBgi, 86400000);
+intervalBgi();

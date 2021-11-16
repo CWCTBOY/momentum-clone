@@ -9,4 +9,5 @@ function liveClock() {
   clock.innerHTML = `${hours}:${minutes}:${seconds}`;
 };
 
+liveClock();
 setInterval(liveClock, 1000);
