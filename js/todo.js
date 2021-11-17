@@ -1,34 +1,29 @@
 const toDoForm = document.querySelector(".todo");
+const toDoInput = document.querySelector(".todo_text");
 const toDoList = document.querySelector(".todo-list");
-const toDoText = document.querySelector(".todo_text");
 
-function savedToDo() {
-  const li = document.createElement("li");
-  const span = document.createElement("span");
-  const btn = document.createElement("button");
-  toDoList.appendChild(li);
-  li.appendChild(span);
-  li.appendChild(btn);
-  span.innerHTML = `${typedToDo}`;
-};
-
-const typedToDo = localStorage.getItem("todo");
-
-if (typedToDo === null)
-{
-  toDoForm.addEventListener("submit", submitToDoForm);
-} else
-{
-  savedToDo();
-}
+toDoForm.addEventListener("submit", submitToDoForm);
 
 function submitToDoForm(event) {
   event.preventDefault();
-  const toDo = toDoText.value;
-  localStorage.setItem("todo", toDo);
-  toDoText.value = ``;
-  savedToDo(typedToDo);
+  const typedToDo = toDoInput.value;
+  toDoInput.value = ``;
+  paintToDo(typedToDo);
 };
 
+function paintToDo(a) {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  toDoList.appendChild(li);
+  li.appendChild(span);
+  span.innerHTML = a;
+  const btn = document.createElement("button");
+  li.appendChild(btn);
+  btn.innerHTML = `↩️`;
+  btn.addEventListener("click", removeToDo);
+};
 
-
+function removeToDo(event) {
+  const removeToDo = event.target.parentElement;
+  removeToDo.remove();
+}
