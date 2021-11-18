@@ -43,5 +43,5 @@ const localToDo = localStorage.getItem(TODO_KEY);
 if (localToDo !== null)
 {
   const transToArray = JSON.parse(localToDo);
-  transToArray.forEach((item) => /* What the hack*/ );
+  transToArray.forEach(paintToDo);
 }
