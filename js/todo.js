@@ -14,8 +14,12 @@ function submitToDoForm(event) {
   event.preventDefault();
   const typedToDo = toDoInput.value;
   toDoInput.value = ``;
-  savedToDo.push(typedToDo);
-  paintToDo(typedToDo);
+  const typedToDoObj = {
+    id: Date.now(),
+    text: typedToDo
+  };
+  savedToDo.push(typedToDoObj);
+  paintToDo(typedToDoObj);
   pushLocalStorage();
 };
 
@@ -25,19 +29,22 @@ function pushLocalStorage() {
 
 function paintToDo(typedToDo) {
   const li = document.createElement("li");
+  li.id = typedToDo.id;
   const span = document.createElement("span");
   toDoList.appendChild(li);
   li.appendChild(span);
-  span.innerHTML = typedToDo;
+  span.innerHTML = typedToDo.text;
   const btn = document.createElement("button");
   li.appendChild(btn);
   btn.innerHTML = `↩️`;
   btn.addEventListener("click", removeToDo);
 };
 
-function removeToDo(event) {
-  const removeToDo = event.target.parentElement;
+function removeToDo(listItem) {
+  const removeToDo = listItem.target.parentElement;
   removeToDo.remove();
+  savedToDo = savedToDo.filter(obj => obj.id !== parseInt(removeToDo.id)); // typeof obj.id = number && typeof removeToDo.id = string => execute parseInt func.
+  pushLocalStorage(); // localStorage에 변화한 Array를 한번더 세팅시키기 위해 함수실행.
 };
 
 const localToDo = localStorage.getItem(TODO_KEY);
@@ -45,6 +52,9 @@ const localToDo = localStorage.getItem(TODO_KEY);
 if (localToDo !== null)
 {
   const transToArray = JSON.parse(localToDo);
-  savedToDo = transToArray; //refresh할 때 savedToDo가 공백이 되지않도록 선언.
-  transToArray.forEach(paintToDo);
+  savedToDo = transToArray; // refresh할 때 savedToDo가 공백이 되지않도록 선언.
+  transToArray.forEach(paintToDo);// savedToDo = transToArray로 선언 but ui에 보이기 하기위해 forEach func 실행  
 }
+
+
+
