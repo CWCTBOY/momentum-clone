@@ -45,6 +45,6 @@ const localToDo = localStorage.getItem(TODO_KEY);
 if (localToDo !== null)
 {
   const transToArray = JSON.parse(localToDo);
-  savedToDo = transToArray;
+  savedToDo = transToArray; //refresh할 때 savedToDo가 공백이 되지않도록 선언.
   transToArray.forEach(paintToDo);
 }
