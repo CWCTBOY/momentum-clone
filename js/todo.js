@@ -4,7 +4,9 @@ const toDoList = document.querySelector(".todo-list");
 
 const TODO_KEY = "todo";
 
-const savedToDo = [];
+let savedToDo = []; /* 상수일 경우 localStorage에 key-value가 있어도
+                    savedToDo가 항상 공백이므로 이를 방지하기 위해 varType을
+                    let으로 선언한다.(ref=>js.48)*/
 
 toDoForm.addEventListener("submit", submitToDoForm);
 
@@ -43,5 +45,6 @@ const localToDo = localStorage.getItem(TODO_KEY);
 if (localToDo !== null)
 {
   const transToArray = JSON.parse(localToDo);
+  savedToDo = transToArray;
   transToArray.forEach(paintToDo);
 }
