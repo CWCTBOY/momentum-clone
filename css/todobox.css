@@ -1,21 +1,29 @@
 .todo-box {
   width: 50vw;
-  height: 70vh;
-  background-color: rgba(0,0,0,0.6);
+  height: 60vh;
+  background-color: rgba(255,255,255,0.3);
   border-radius: 20px;
+}
+
+i {
+  transition: color 1s ease-in-out;
+}
+
+i:hover {
+  color: black;
 }
 
 .sayhello {
   width: 50vw;
   height: 10vh;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.8);
   border-radius: 20px 20px 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  color: rgba(255,255,255,0.7);
+  font-size: 20px;
+  color: whitesmoke;
 }
 
 .todo {
@@ -23,22 +31,42 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  font-size: 20px;
+}
+
+.todo:hover > .todo_whatau {
+  -webkit-animation: todoanime 2s forwards ease-in-out;
+}
+
+@-webkit-keyframes todoanime {
+  0%{
+
+  }
+  50%{
+    color: rgb(114, 213, 183);
+    transform:rotateX(300deg) ;
+  }
+  100%{
+    font-size: 24px;
+    color: rgb(114, 213, 183);
+    transform:rotateX(360deg) ;
+  }
 }
 
 .todo_text {
   margin: 10px 0 10px 0;
   background-color: none;
   border: none;
-  border-bottom: 3px rgba(255,255,255,0.7) solid;
+  border-bottom: 2px whitesmoke solid;
   background-color: transparent;
-  width: 30vw;
+  width: 20vw;
   height: 5vh;
   font-size: 20px;
 }
 
 .todo_text:focus {
   outline: none;
-  color: whitesmoke;
+  color: rgb(114, 213, 183);
 }
 
 .todo-list {
@@ -55,5 +83,36 @@ li {
   justify-content: space-between;
 }
 
+.sayhello {
+  position: relative;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
 
+@-webkit-keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
 
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

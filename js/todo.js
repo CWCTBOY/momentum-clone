@@ -31,6 +31,7 @@ function paintToDo(typedToDo) {
   const li = document.createElement("li");
   li.id = typedToDo.id;
   const span = document.createElement("span");
+  span.classList.add("todolist");
   toDoList.appendChild(li);
   li.appendChild(span);
   span.innerHTML = typedToDo.text;
@@ -43,7 +44,6 @@ function paintToDo(typedToDo) {
 
 function removeToDo(listItem) {
   const removeToDo = listItem.target.parentElement;
-  console.log(listItem);
   removeToDo.remove();
   savedToDo = savedToDo.filter(obj => obj.id !== parseInt(removeToDo.id)); // typeof obj.id = number && typeof removeToDo.id = string => execute parseInt func.
   pushLocalStorage(); // localStorage에 변화한 Array를 한번더 세팅시키기 위해 함수실행.

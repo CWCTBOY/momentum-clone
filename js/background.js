@@ -1,5 +1,5 @@
 const bgi = [
-  "https://c4.wallpaperflare.com/wallpaper/968/629/198/just-do-it-motivational-zen-wallpaper-thumb.jpg"
+  "https://images2.alphacoders.com/480/thumb-1920-480530.png"
 ];
 
 function intervalBgi() {

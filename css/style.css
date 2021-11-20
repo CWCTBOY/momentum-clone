@@ -1,17 +1,17 @@
 @import "@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');";
-@import "hidden.css";
 @import "reset.css";
 @import "weather.css";
 @import "todobox.css";
 @import "quotes.css";
 @import "clock.css";
 @import "login.css";
+@import "hidden.css";
 
 
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/968/629/198/just-do-it-motivational-zen-wallpaper-thumb.jpg");
+  background-image: url("https://images2.alphacoders.com/480/thumb-1920-480530.png");
   color: whitesmoke;
   background-size: cover;
   display: flex;
