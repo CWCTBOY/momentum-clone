@@ -6,6 +6,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const TYPED_USERNAME = "username";
 
 const savedLoginInput = localStorage.getItem(TYPED_USERNAME);
+
 if (savedLoginInput === null)
 {
   loginForm.addEventListener("submit", submitLoginForm);
@@ -21,8 +22,9 @@ function submitLoginForm(event) {
 };//이벤트 함수
 
 function isLocalStorageExist() {
-  const userName = localStorage.getItem(TYPED_USERNAME);
+  const toDoBox = document.querySelector(".todo-box");
+  toDoBox.classList.remove(HIDDEN_CLASSNAME);
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  sayHello.classList.remove(HIDDEN_CLASSNAME);
+  const userName = localStorage.getItem(TYPED_USERNAME);
   sayHello.innerHTML = `Hello, ${userName}!`;
 };//반복함수

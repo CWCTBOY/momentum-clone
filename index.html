@@ -10,26 +10,30 @@
 </head>
 
 <body>
+  <div class="weather">
+    <span class="weather_city"></span>
+  </div>
+  <h2 class="clock"></h2>
   <form class="login">
+    <span class="login_span">What is your name?</span>
     <input class="login_input" type="text" required maxlength="15">
     <button class="login_submit hidden">Go=!</button>
   </form>
-  <h2 class="clock"></h2>
-  <div class="weather">
-    <span class="weather_city"></span>
-    <span class="weather_weather"></span>
-  </div>
-  <h1 class="hidden sayhello"></h1>
-  <form action="" class="todo">
-    <input type="text" class="todo_text" placeholder="Write to do" required>
-  </form>
-  <ul class="todo-list">
-  </ul>
+  <main class="hidden todo-box">
+    <h1 class="hidden sayhello"></h1>
+    <form action="" class="todo">
+      <span>What are you going to do today?</span>
+      <input type="text" class="todo_text" required>
+    </form>
+    <ul class="todo-list">
+    </ul>
+  </main>
   <div class="quotes">
     <span class="quotes_content"></span>
     <span class="quotes_author"></span>
   </div>
   <!--js area from here-->
+  <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
   <script src="js/background.js"></script>
   <script src="js/quotes.js"></script>
   <script src="js/sayhello.js"></script>

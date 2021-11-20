@@ -12,10 +12,8 @@ function geoOk(location) {
 
       const weatherBox = document.querySelector(".weather");
       const cityBox = weatherBox.querySelector(".weather_city");
-      const weatherWeatherBox = weatherBox.querySelector(".weather_weather");
 
-      cityBox.innerHTML = `${city}`;
-      weatherWeatherBox.innerHTML = `${weather}`;
+      cityBox.innerHTML = `${city},  ${weather}`;
     });
 }
 

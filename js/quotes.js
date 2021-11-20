@@ -30,6 +30,7 @@ function randomQuotes() {
   author.innerHTML = randomNumber.author;
 };
 
+setInterval(randomQuotes, 10000);
 randomQuotes();
 
 

@@ -34,14 +34,16 @@ function paintToDo(typedToDo) {
   toDoList.appendChild(li);
   li.appendChild(span);
   span.innerHTML = typedToDo.text;
-  const btn = document.createElement("button");
-  li.appendChild(btn);
-  btn.innerHTML = `↩️`;
-  btn.addEventListener("click", removeToDo);
+  const removeIcon = document.createElement("i");
+  removeIcon.classList.add("far")
+  removeIcon.classList.add("fa-trash-alt")
+  li.appendChild(removeIcon);
+  removeIcon.addEventListener("click", removeToDo);
 };
 
 function removeToDo(listItem) {
   const removeToDo = listItem.target.parentElement;
+  console.log(listItem);
   removeToDo.remove();
   savedToDo = savedToDo.filter(obj => obj.id !== parseInt(removeToDo.id)); // typeof obj.id = number && typeof removeToDo.id = string => execute parseInt func.
   pushLocalStorage(); // localStorage에 변화한 Array를 한번더 세팅시키기 위해 함수실행.
