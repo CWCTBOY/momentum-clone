@@ -26,9 +26,7 @@ i:hover {
 }
 
 @-webkit-keyframes todoanime {
-  0%{
-
-  }
+  0%{}
   80%{
     color: rgb(114, 213, 183);
     transform:rotateX(300deg) ;
