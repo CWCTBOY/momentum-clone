@@ -15,8 +15,8 @@ if (savedLoginInput === null)
   isLocalStorageExist();
 };
 
-function submitLoginForm(event) {
-  event.preventDefault();
+function submitLoginForm(e) {
+  e.preventDefault();
   localStorage.setItem(TYPED_USERNAME, loginInput.value);
   isLocalStorageExist();
 };//이벤트 함수

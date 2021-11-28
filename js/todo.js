@@ -10,8 +10,8 @@ let savedToDo = []; /* 상수일 경우 localStorage에 key-value가 있어도
 
 toDoForm.addEventListener("submit", submitToDoForm);
 
-function submitToDoForm(event) {
-  event.preventDefault();
+function submitToDoForm(e) {
+  e.preventDefault();
   const typedToDo = toDoInput.value;
   toDoInput.value = ``;
   const typedToDoObj = {
